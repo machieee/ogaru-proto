@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon-precomposed" href="images/icon2.png" />
+    <title>OGARU - オガル -</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="css/jquery-ui-1.11.4.min">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <!--ページ領域-->
+    <div data-role="page" data-title="OGARU">
+
+      <!--ヘッダー領域-->
+      <div data-role="header">
+        <h1>OGARU</h1>
+      </div>
+
+      <div data-role="content" class="ui-content">
+
+        <div id="day0">
+          <h2><span id="today">N月N日(D)</span> 本日の献立</h2>
+          <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">主食</li>
+            <li>
+            <p><strong>ご飯</strong>
+            </li>
+            <li data-role="list-divider">おかず</li>
+            <li>
+              <fieldset class="ui-grid-b">
+                <div class="ui-block-a">
+                  <p><strong>野菜炒め</strong> (主菜)</p>
+                </div>
+                <div class="ui-block-b">
+                  <p><strong>あえもの</strong> (副菜1)</p>
+                </div>
+                <div class="ui-block-c">
+                  <p><strong>なし</strong> (副菜2)</p>
+                </div>
+              </fieldset>
+            </li>
+            <li data-role="list-divider">汁物</li>
+            <li>
+            <p><strong>味噌汁</strong>
+            </li>
+          </ul>
+        </div>
+
+        <div data-role="tabs" id="tabs">
+          <div data-role="navbar">
+            <ul class="menutabs">
+              <li><a href="#day1menu" class="daymenu day1menutab" data-ajax="false"><span id="day1">day1</span></a></li>
+              <li><a href="#day2menu" class="daymenu day2menutab" data-ajax="false"><span id="day2">day2</span></a></li>
+              <li><a href="#day3menu" class="daymenu day3menutab" data-ajax="false"><span id="day3">day3</span></a></li>
+              <li><a href="#day4menu" class="daymenu day4menutab" data-ajax="false"><span id="day4">day4</span></a></li>
+              <li><a href="#day5menu" class="daymenu day5menutab" data-ajax="false"><span id="day5">day5</span></a></li>
+              <li><a href="#day6menu" class="daymenu day6menutab" data-ajax="false"><span id="day6">day6</span></a></li>
+            </ul>
+          </div>
+          <div id="day1menu" class="ui-body-d ui-content">
+            <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider">主食</li>
+              <li>
+              <p><strong>コッペパン</strong>
+              </li>
+              <li data-role="list-divider">おかず</li>
+              <li>
+                <fieldset class="ui-grid-b">
+                  <div class="ui-block-a">
+                    <p><strong>から揚げ</strong> (主菜)</p>
+                  </div>
+                  <div class="ui-block-b">
+                    <p><strong>なし</strong> (副菜1)</p>
+                  </div>
+                  <div class="ui-block-c">
+                    <p><strong>なし</strong> (副菜2)</p>
+                  </div>
+                </fieldset>
+              </li>
+              <li data-role="list-divider">汁物</li>
+              <li>
+              <p><strong>スープ</strong>
+              </li>
+            </ul>
+          </div>
+          <div id="day2menu" class="ui-body-d ui-content">
+            menu2
+          </div>
+          <div id="day3menu" class="ui-body-d ui-content">
+            menu3
+          </div>
+          <div id="day4menu" class="ui-body-d ui-content">
+            menu4
+          </div>
+          <div id="day5menu" class="ui-body-d ui-content">
+            menu5
+          </div>
+          <div id="day6menu" class="ui-body-d ui-content">
+            menu6
+          </div>
+        </div>
+      </div>
+
+      <div data-role="footer">
+        <div data-role="collapsible-set" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+          <div data-role="collapsible" width="100%">
+            <h2>OGARUについて</h2>
+            <div id="help">
+              <h2>目的</h2>
+              xxxxxxxxx
+              <h2>使い方</h2>
+              xxxxxxxxx
+              <h2>xxxについて</h2>
+              xxxxxxxxx
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+
+
+<!--
+  <script src="js/bootstrap.min.js"></script>
+-->
+  <script src="js/script.js"></script>
+  <!-- ブックマークお勧めポップアップ追加-->
+  <script src="js/bookmark-bubble/bookmark_bubble.min.js"></script>
+  <script src="js/bookmark-bubble/example/example.min.js"></script>
+</body>
+</html>
