@@ -2,7 +2,7 @@
 // ページイベントを登録
 $(document).ready(function() {
   $( "#tabs" ).tabs({
-    selected: 0,
+
   });
 
   var todayDate = new Date();
@@ -15,6 +15,8 @@ $(document).ready(function() {
   var day4Obj = getDay(4);
   var day5Obj = getDay(5);
   var day6Obj = getDay(6);
+
+  var menus = new Array();
 
   $("#today").html(getToday());
 
@@ -31,6 +33,67 @@ $(document).ready(function() {
   $(".day4menutab").css("background-color", day4Obj[2]);
   $(".day5menutab").css("background-color", day5Obj[2]);
   $(".day6menutab").css("background-color", day6Obj[2]);
+
+  //LinkDataを取得
+  var dataUrl = 'http://linkdata.org/api/1/'+ldDataset+'/'+ldFileName+'_tsv.txt';
+      $.ajax ({
+          type:'GET',
+          //dataType:'text',
+          dataType:'jsonp',
+          url: dataUrl,
+          contentType: "text/csv; charset=utf-8",
+          error: function() {
+              alert('Error retrieving csv file');
+          },
+          success: function(data) {
+            //dataオブジェクトから該当給食データを取得する
+
+            menus = _tsv2EventData(data, todayDate);
+
+            //表示する
+            $('#menu0-mainly').html(menus[0].mainly);
+            $('#menu0-side1').html(menus[0].side1 + " (主菜)");
+            $('#menu0-side2').html(menus[0].side2 + " (副菜1)");
+            $('#menu0-soup').html(menus[0].soup);
+            $('#menu0-fruits').html(menus[0].fruits);
+
+            $('#menu1-mainly').html(menus[1].mainly);
+            $('#menu1-side1').html(menus[1].side1 + " (主菜)");
+            $('#menu1-side2').html(menus[1].side2 + " (副菜1)");
+            $('#menu1-soup').html(menus[1].soup);
+            $('#menu1-fruits').html(menus[1].fruits);
+
+            $('#menu2-mainly').html(menus[2].mainly);
+            $('#menu2-side1').html(menus[2].side1 + " (主菜)");
+            $('#menu2-side2').html(menus[2].side2 + " (副菜1)");
+            $('#menu2-soup').html(menus[2].soup);
+            $('#menu2-fruits').html(menus[2].fruits);
+
+            $('#menu3-mainly').html(menus[3].mainly);
+            $('#menu3-side1').html(menus[3].side1 + " (主菜)");
+            $('#menu3-side2').html(menus[3].side2 + " (副菜1)");
+            $('#menu3-soup').html(menus[3].soup);
+            $('#menu3-fruits').html(menus[3].fruits);
+
+            $('#menu4-mainly').html(menus[4].mainly);
+            $('#menu4-side1').html(menus[4].side1 + " (主菜)");
+            $('#menu4-side2').html(menus[4].side2 + " (副菜1)");
+            $('#menu4-soup').html(menus[4].soup);
+            $('#menu4-fruits').html(menus[4].fruits);
+
+            $('#menu5-mainly').html(menus[5].mainly);
+            $('#menu5-side1').html(menus[5].side1 + " (主菜)");
+            $('#menu5-side2').html(menus[5].side2 + " (副菜1)");
+            $('#menu5-soup').html(menus[5].soup);
+            $('#menu5-fruits').html(menus[5].fruits);
+
+            $('#menu6-mainly').html(menus[6].mainly);
+            $('#menu6-side1').html(menus[6].side1 + " (主菜)");
+            $('#menu6-side2').html(menus[6].side2 + " (副菜1)");
+            $('#menu6-soup').html(menus[6].soup);
+            $('#menu6-fruits').html(menus[6].fruits);
+          }
+      });
 
   //今日の日付を取得
   function getToday() {
@@ -55,7 +118,6 @@ $(document).ready(function() {
     return dayObj[0] + "日<br/>(" + dayObj[1] + ")";
   }
 });
-
 
 /**
  給食情報を管理するクラスです。
